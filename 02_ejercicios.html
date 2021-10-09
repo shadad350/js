@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio</title>
+  </head>
+  <body>
+    <script>
+      /* 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10. */
+
+      /*       let numero = 1234;
+
+            let cadena = numero.toString();
+
+            console.log(numero);
+            console.log(typeof(cadena) ); */
+
+      /*   let numero = 1234;
+
+            console.log((numero.toString()).length); */
+
+      /* function Cuenta(a) {
+                console.log((a.toString()).length);
+            } */
+
+      const Cuenta = (a = "") => console.log(a.toString().length);
+
+      console.log("Solución Ejercicio 1");
+      Cuenta("Hola mundo como va");
+
+      const Cuenta2 = (a = "") =>
+        !a
+          ? console.warn("No ingresaste ninguna cadena")
+          : console.info(
+              `La cadena "${a}" tiene ${a.toString().length} caracteres`
+            );
+
+      Cuenta2();
+      Cuenta2("Hola Mundo");
+
+      /*2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola". */
+
+      /* let mundo = 'hola mundo'
+
+            console.log(mundo.slice(0,4)); */
+
+      // const recorte = (a, b) => console.log(a.toString().slice(0, b));
+
+      console.info("Solución Ejercicio 2");
+      //recorte("hola mundo", 4);
+
+      const recorte2 = (a = "", b = undefined) =>
+        !a
+          ? console.warn("No ingresaste ninguna cadena")
+          : b === undefined
+          ? console.warn("No ingresaste una longitud")
+          : console.log(
+              `El texto recortado de la cadena "${a}" es "${a
+                .toString()
+                .slice(0, b)}"`
+            );
+
+      recorte2();
+      recorte2(213788943682, 4);
+      recorte2(213788943682);
+
+      /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']. */
+
+      /*       let saludo = 'hola que tal'
+
+            console.log(saludo.split(" ")); */
+
+      const separa = (a = "", b = undefined) =>
+        !a
+          ? console.warn("No ingresaste ninguna cadena")
+          : b === undefined
+          ? console.warn("No ingresaste un caracter")
+          : console.log(
+              `El texto ingresado es "${a}" se separa en: "${a
+                .toString()
+                .split(b)}"`
+            );
+
+      console.log("Solución Ejercicio 3");
+      separa("hola que tal", " ");
+      separa("hola que tal");
+
+      /*4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+       */
+
+      /*       const repite = (a, b) => console.log(a.toString().repeat(b));
+
+            console.log("Solución Ejercicio 4");
+            repite("hola que tal", 3); */
+
+      const repite = (a = "", b = undefined) => {
+        if (!a) return console.warn("No ingresaste un texto");
+        if (b === undefined)
+          return console.warn(
+            "no ingresaste el número de veces a repetir el texto"
+          );
+        if (b === 0) return console.error("el número de veces no puede ser 0");
+        if (b < 0)
+          return console.error("el número de veces no puede ser negativo");
+        for (let i = 1; i <= b; i++) console.log(`${a},${i}`);
+      };
+
+      console.info("Solución Ejercicio 4");
+      repite("hola que tal", 3);
+      repite("hola que tal", -3);
+
+      /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+            6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+            7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+            8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5. */
+    </script>
+  </body>
+</html>
